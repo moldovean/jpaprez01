@@ -9,8 +9,9 @@ import javax.persistence.Id;
  * Created by avrabie on 11/29/2016.
  */
 @Entity
-public class Employee {
+public class Employee2 {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String firstName;
     private String lastName;
