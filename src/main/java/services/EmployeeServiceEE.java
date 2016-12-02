@@ -22,6 +22,10 @@ public class EmployeeServiceEE {
         return em;
     }
 
+   /* public EmployeeService(EntityManager entityManager) {
+        this.em = entityManager;
+    }*/
+
     public Employee createEmployee(Long id, String firstName, String lastName, Long salary){
         Employee employee=new Employee();
         employee.setId(id);
