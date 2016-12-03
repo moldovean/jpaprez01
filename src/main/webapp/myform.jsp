@@ -6,10 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%! int i=15; %>
+
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Our Form</title>
   </head>
   <body>
   <h1>ReALLy?</h1>
@@ -18,10 +18,12 @@
     response.getWriter().println("Your IP address is " + request.getRemoteAddr());
     out.println("surprisingly, it works!");
   %>
-   <h3> The i is <%=i%></h3>
 
-  <h4>Is this persistent?</h4>
-  <form method="get" action="index.jsp">
+  <br/>
+  Hello, <%= request.getParameter("firstName")%> <%= request.getParameter("lastName")%> <br/>
+  please enter the form below: <br/>
+
+  <form method="get" action="myform.jsp">
     ID: <input type="text" name="id"> <br/>
     FirstName <input type="text" name="firstName"> <br/>
     LastName <input type="text" name="lastName"> <br/>
@@ -30,8 +32,8 @@
   </form>
 
   <br/>
-  FirstName: <%= request.getParameter("firstName")%>
-  LastName:  <%= request.getParameter("lastName")%>
+  FirstName: ${firstName}
+  LastName:  ${lastName}
 
   </body>
 </html>
